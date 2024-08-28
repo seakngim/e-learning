@@ -20,5 +20,6 @@ public class Category {
     private String name;
     private String icon;
     private Boolean isDeleted;
+    private String description;
 
 }

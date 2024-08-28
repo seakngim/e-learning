@@ -1,9 +1,37 @@
-spring:
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: e-learning
-      username: e-learning
-      password: password
-      authentication-database: admin
+openapi: 3.0.0
+info:
+  title: Course Management API
+  description: This API is used to manage courses, students, and related entities in the e-learning platform.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/api/v1
+    description: Local server
+paths:
+  /categories:
+    get:
+      summary: Get all categories
+      operationId: getCategories
+      responses:
+        '200':
+          description: A list of categories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CategoryResponse'
+components:
+  schemas:
+    CategoryResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        icon:
+          type: string
+        description:
+          type: string
+        isDeleted:
+          type: boolean
