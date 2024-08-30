@@ -19,12 +19,12 @@ services:
       - course_mongodb_log_vol2:/var/log/mongodb/
     networks:
       - course_mongodb_net
-  api-course:
+  api-data:
     build: .
-    image: "api-course"
-    container_name: "api-course"
+    image: "api-data"
+    container_name: "api-data"
     ports:
-      - "8082:8080"
+      - "8084:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
