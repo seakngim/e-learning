@@ -1,7 +1,7 @@
 services:
-  e-learning:
+  spring-data:
     image: "mongo:7.0.12-rc1-jammy"
-    container_name: "e-learning"
+    container_name: "spring-data"
     ports:
       - "27024:27017"
     environment:
